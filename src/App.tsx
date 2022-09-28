@@ -1,3 +1,3 @@
 export const App = () => {
-  return <>test</>;
-};
+  return <h2>Redux Toolkit</h2>
+}
