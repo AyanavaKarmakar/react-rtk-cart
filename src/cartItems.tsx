@@ -1,4 +1,12 @@
-export const cartItems = [
+export interface CartItem {
+  id: string
+  title: string
+  price: string
+  img: string
+  amount: number
+}
+
+export const cartItems: CartItem[] = [
   {
     id: 'rec1JZlfCIBOPdcT2',
     title: 'Samsung Galaxy S8',
