@@ -14,7 +14,10 @@ interface SliceState {
 
 const initialState: SliceState = {
   cartItems: cartItems,
-  amount: 0,
+  /**
+   * TODO Revert to `amount: 0`
+   */
+  amount: 4,
   total: 0,
   isLoading: true,
 }
