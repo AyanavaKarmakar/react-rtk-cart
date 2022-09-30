@@ -1,4 +1,4 @@
-import { Navbar, CartContainer } from './components'
+import { Navbar, CartContainer, Modal } from './components'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from './Store'
 import { useEffect } from 'react'
@@ -14,6 +14,7 @@ export const App = () => {
 
   return (
     <main>
+      <Modal />
       <Navbar />
       <CartContainer />
     </main>
