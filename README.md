@@ -26,4 +26,4 @@ export const getCartItems = createAsyncThunk('cart/getCartItems', async (name, t
 
 ### TODO —
 
-<ul><li>Redux Saga Implementation</li></ul>
+1. [Redux Saga](https://redux-saga.js.org/) Implementation
