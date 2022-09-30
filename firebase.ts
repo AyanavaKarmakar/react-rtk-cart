@@ -1,12 +1,12 @@
 import { initializeApp } from 'firebase/app'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAcovz4KUrL19nC6QuGWMEuCei_BxZmHqs',
-  authDomain: 'react-rtk-clone.firebaseapp.com',
-  projectId: 'react-rtk-clone',
-  storageBucket: 'react-rtk-clone.appspot.com',
-  messagingSenderId: '584301351907',
-  appId: '1:584301351907:web:c2dc8620e5ab6c633386d6',
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 }
 
 const app = initializeApp(firebaseConfig)
