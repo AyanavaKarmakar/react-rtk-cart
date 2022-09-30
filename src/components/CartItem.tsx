@@ -16,7 +16,11 @@ export const CartItem = (props: CartItemInterface) => {
   }
 
   const handleDecreaseItemQuantity = () => {
-    dispatch(decreaseItemQuantity(id))
+    if (amount > 1) {
+      dispatch(decreaseItemQuantity(id))
+    } else {
+      dispatch(removeItem(id))
+    }
   }
 
   return (
