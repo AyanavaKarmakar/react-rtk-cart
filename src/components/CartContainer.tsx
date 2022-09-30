@@ -1,6 +1,7 @@
 import { CartItem } from './CartItem'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../Store'
+import { clearCart } from '../features/cart/cartSlice'
 
 /**
  * @see https://redux-toolkit.js.org/usage/usage-with-typescript#getting-the-state-type
@@ -8,6 +9,11 @@ import { RootState } from '../Store'
  */
 export const CartContainer = () => {
   const { cartItems, amount, total } = useSelector((store: RootState) => store.cart)
+  const dispatch = useDispatch()
+
+  const handleClearCart = () => {
+    dispatch(clearCart())
+  }
 
   if (amount < 1) {
     return (
@@ -37,7 +43,9 @@ export const CartContainer = () => {
             Total <span>₹{total}</span>
           </h4>
         </div>
-        <button className='btn clear-btn'>Clear Cart</button>
+        <button className='btn clear-btn' onClick={handleClearCart}>
+          Clear Cart
+        </button>
       </footer>
     </section>
   )
