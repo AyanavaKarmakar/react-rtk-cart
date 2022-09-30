@@ -1,5 +1,7 @@
 # Reference repo for React Redux Toolkit.
 
+## Note: The [web app](https://react-rtk-clone.web.app/) has been hosted via [Firebase-Hosting](https://firebase.google.com/docs/hosting).
+
 Optional Approach for Redux thunk using <u>axios</u> —
 
 ```bash
