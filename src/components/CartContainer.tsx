@@ -2,6 +2,7 @@ import { CartItem } from './CartItem'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../Store'
 import { clearCart } from '../features/cart/cartSlice'
+import { openModal } from '../features/modal/modalSlice'
 
 /**
  * @see https://redux-toolkit.js.org/usage/usage-with-typescript#getting-the-state-type
@@ -12,7 +13,7 @@ export const CartContainer = () => {
   const dispatch = useDispatch()
 
   const handleClearCart = () => {
-    dispatch(clearCart())
+    dispatch(openModal())
   }
 
   if (amount < 1) {

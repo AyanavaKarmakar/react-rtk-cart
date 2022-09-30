@@ -1,17 +1,29 @@
-export const Modal = () => {
-  return (
-    <aside className='modal-container'>
-      <div className='modal'>
-        <h4>Remove all items from your shopping cart?</h4>
-        <div className='btn-container'>
-          <button type='button' className='btn confirm-btn'>
-            confirm
-          </button>
-          <button type='button' className='btn clear-btn'>
-            cancel
-          </button>
-        </div>
-      </div>
-    </aside>
-  )
+import { createSlice } from '@reduxjs/toolkit'
+
+/**
+ * @see https://redux-toolkit.js.org/usage/usage-with-typescript#createslice
+ */
+
+interface SliceState {
+  isOpen: boolean
 }
+
+const initialState: SliceState = {
+  isOpen: false,
+}
+
+const modalSlice = createSlice({
+  name: 'modal',
+  initialState,
+  reducers: {
+    openModal: (state) => {
+      state.isOpen = true
+    },
+    closeModal: (state) => {
+      state.isOpen = false
+    },
+  },
+})
+
+export const { openModal, closeModal } = modalSlice.actions
+export default modalSlice.reducer
