@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { cartItems, CartItem } from '../../cartItems'
+import { cartItems, CartItemInterface } from '../../cartItems'
 
 /**
  * @see https://redux-toolkit.js.org/usage/usage-with-typescript#createslice
  */
 
 interface SliceState {
-  cartItems: CartItem[]
+  cartItems: CartItemInterface[]
   amount: number
   total: number
   isLoading: boolean
