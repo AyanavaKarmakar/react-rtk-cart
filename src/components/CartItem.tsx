@@ -1,7 +1,7 @@
 import { ChevronUp, ChevronDown } from '../icons'
 import { CartItemInterface } from '../cartItems'
 import { useDispatch } from 'react-redux'
-import { removeItem } from '../features/cart/cartSlice'
+import { removeItem, increaseItemQuantity, decreaseItemQuantity } from '../features/cart/cartSlice'
 
 export const CartItem = (props: CartItemInterface) => {
   const { id, img, title, price, amount } = props
@@ -9,6 +9,14 @@ export const CartItem = (props: CartItemInterface) => {
 
   const handleRemoveItem = () => {
     dispatch(removeItem(id))
+  }
+
+  const handleIncreaseItemQuantity = () => {
+    dispatch(increaseItemQuantity(id))
+  }
+
+  const handleDecreaseItemQuantity = () => {
+    dispatch(decreaseItemQuantity(id))
   }
 
   return (
@@ -22,11 +30,11 @@ export const CartItem = (props: CartItemInterface) => {
         </button>
       </div>
       <div>
-        <button className='amount-btn'>
+        <button className='amount-btn' onClick={handleIncreaseItemQuantity}>
           <ChevronUp />
         </button>
         <p className='amount'>{amount}</p>
-        <button className='amount-btn'>
+        <button className='amount-btn' onClick={handleDecreaseItemQuantity}>
           <ChevronDown />
         </button>
       </div>
