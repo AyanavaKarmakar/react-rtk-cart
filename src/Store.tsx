@@ -10,6 +10,8 @@ export const store = configureStore({
 })
 
 /**
- * @see https://redux-toolkit.js.org/usage/usage-with-typescript#getting-the-state-type
+ * @see https://redux-toolkit.js.org/usage/usage-with-typescript#getting-the-state-
+ * @see https://redux-toolkit.js.org/tutorials/typescript#define-root-state-and-dispatch-types
  */
 export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
